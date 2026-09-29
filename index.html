@@ -8,8 +8,9 @@
 <meta name="apple-mobile-web-app-title" content="灰港行动">
 <link rel="apple-touch-icon" href="icon.png">
 <link rel="icon" href="icon.png">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>灰港行动</title>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font:14px system-ui,-apple-system,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" media="print" onload="this.media='all'">
 <script src="three.min.js"></script>
 <style>
@@ -265,6 +266,69 @@ button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
 .pa-btns button.pri{background:var(--acc);color:#1a1405;border-color:var(--acc);font-weight:700}
 .rl .it{grid-template-columns:30px 1fr auto 76px!important}
 .pick{grid-template-columns:22px 30px 1fr auto 70px!important}
+
+.coll-slot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 16px;border:1px solid #6a2a24;background:linear-gradient(120deg,#2a1012,#1a1210 60%);position:relative;overflow:hidden}
+.coll-slot::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 15% 0%,rgba(236,75,63,.22),transparent 60%);pointer-events:none}
+.cs-l{position:relative;display:grid;gap:6px;flex:1;min-width:220px}
+.cs-l b{font-size:16px;color:#f3c9a0}
+.cs-l span{font-size:12.5px;color:var(--dim);line-height:1.6}
+.cs-l .pb{height:4px;background:#3a1a18}.cs-l .pb i{display:block;height:100%;background:linear-gradient(90deg,#ec4b3f,#e8b23a)}
+#openColl{position:relative;background:linear-gradient(180deg,#c9403a,#8e2420);color:#fff2e0;border:1px solid #e8b23a;padding:10px 20px;font-weight:700;letter-spacing:.1em}
+#coll{position:fixed;inset:0;z-index:30;overflow-y:auto;padding-inline:16px;padding-block:calc(env(safe-area-inset-top,0px) + 20px) 40px;
+  background:radial-gradient(ellipse at 50% -10%,rgba(236,75,63,.28),transparent 55%),repeating-linear-gradient(90deg,rgba(0,0,0,.18) 0 2px,transparent 2px 6px),#1c0a0c;color:#f2e6d6}
+.coll-w{max-width:1000px;margin:0 auto;display:grid;gap:18px}
+.coll-top{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;border-bottom:1px solid rgba(232,178,58,.35);padding-bottom:14px}
+.coll-k{font:600 11px var(--disp);letter-spacing:.3em;color:#e8b23a}
+.coll-top h2{margin:4px 0 0;font:900 clamp(30px,6vw,46px)/1 "Noto Sans SC",sans-serif;letter-spacing:.08em;color:#f7dcc0;text-shadow:0 2px 18px rgba(236,75,63,.45)}
+#collBack{background:transparent;border:1px solid #e8b23a;color:#e8b23a;padding:9px 18px;font-weight:700}
+.coll-head{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(232,178,58,.3);border:1px solid rgba(232,178,58,.3)}
+.coll-head div{background:#241012;padding:10px 12px}
+.coll-head small{display:block;font-size:11px;color:#b89a80}
+.coll-head b{font:700 20px var(--mono);color:#f3c9a0;font-variant-numeric:tabular-nums}
+.shelf{display:grid;gap:8px}
+.shelf-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.shelf-h h3{margin:0;font:900 20px "Noto Sans SC";color:#f7dcc0}
+.shelf-h span{font:600 13px var(--mono);color:#e8b23a}
+.shelf-src{font-size:12px;color:#b89a80}
+.shelf-bar{height:3px;background:#3a1a18}.shelf-bar i{display:block;height:100%;background:linear-gradient(90deg,#ec4b3f,#e8b23a)}
+.cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px;padding:14px 12px 16px;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.05) 70%,rgba(90,40,20,.35) 100%);border-bottom:6px solid #4a2a1a;box-shadow:inset 0 -2px 0 #6a4228}
+.case{display:grid;gap:6px}
+.case-glass{position:relative;aspect-ratio:1/1;max-width:100%;border:1px solid rgba(232,178,58,.45);background:radial-gradient(ellipse at 50% 18%,rgba(255,230,190,.28),transparent 62%),linear-gradient(180deg,#2e1416,#150809);box-shadow:inset 0 0 0 3px rgba(0,0,0,.35),0 8px 16px rgba(0,0,0,.45);overflow:hidden}
+.case-glass::after{content:"";position:absolute;inset:0;background:linear-gradient(125deg,rgba(255,255,255,.14) 0 12%,transparent 12% 40%,rgba(255,255,255,.06) 40% 44%,transparent 44%);pointer-events:none}
+.case-glass svg,.case-glass img{position:absolute;left:14%;top:12%;width:72%;height:72%;object-fit:contain;filter:drop-shadow(0 6px 8px rgba(0,0,0,.6))}
+.case.lock .case-glass svg,.case.lock .case-glass img{filter:brightness(0) opacity(.45)}
+.case-n{position:absolute;right:6px;bottom:5px;font:700 12px var(--mono);color:#fff;background:rgba(236,75,63,.85);padding:1px 6px}
+.case-plate{display:grid;gap:2px;text-align:center;padding:6px 4px;background:linear-gradient(180deg,#8a6a2a,#5a4218);border:1px solid #c9a13e}
+.case-plate b{font-size:13px;color:#fff3d8;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.case-plate small{font-size:11px;color:#f0dcb0}
+.case-plate .case-f{color:#d8c090;font-size:10.5px}
+.case.lock .case-plate{background:#2a1a14;border-color:#4a3a28}
+.case.lock .case-plate b{color:#8a7a68}
+.case.lock .case-plate small{color:#7a6a58}
+@media (max-width:560px){.cases{grid-template-columns:repeat(3,1fr);gap:8px;padding:10px 6px 12px}.case-plate b{font-size:11.5px}.case-plate small{font-size:10px}.case-plate .case-f{display:none}.coll-head b{font-size:16px}}
+
+.stash-slot{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:14px 16px;border:1px solid var(--line2);background:linear-gradient(120deg,#1f2616,#161a11 60%)}
+.stash-slot .cs-l b{color:var(--acc)}
+.stash-slot .pb i{background:linear-gradient(90deg,var(--grn),var(--acc))!important}
+#openStash{background:var(--acc);color:#1a1405;border:0;padding:10px 22px;font-weight:700;letter-spacing:.1em}
+#stash{position:fixed;inset:0;z-index:30;overflow-y:auto;padding-inline:16px;padding-block:calc(env(safe-area-inset-top,0px) + 20px) 40px;background:repeating-linear-gradient(0deg,transparent 0 39px,rgba(233,165,59,.035) 39px 40px),repeating-linear-gradient(90deg,transparent 0 39px,rgba(233,165,59,.035) 39px 40px),var(--bg)}
+.st-top{border-bottom-color:var(--line2)}
+.st-k{color:var(--acc)}
+.st-top h2{color:var(--text);text-shadow:none}
+#stBack{background:transparent;border:1px solid var(--acc);color:var(--acc);padding:9px 18px;font-weight:700}
+.st-head{background:var(--line);border-color:var(--line)}
+.st-head div{background:var(--panel)}
+.st-head small{color:var(--dim)}
+.st-head b{color:var(--text);font-size:18px}
+.st-head b.money{color:var(--acc)}
+.st-tools{display:flex;gap:8px;flex-wrap:wrap}
+.st-tools button{background:var(--panel2);border:1px solid var(--line2);padding:9px 14px;font-size:13px}
+.st-tools button:disabled{opacity:.45;cursor:not-allowed}
+.st-tools button.warn{border-color:var(--red);color:#f0a090}
+.st-act{position:sticky;top:0;z-index:2;background:#141810;border:1px solid var(--line2);padding:10px;display:grid;gap:8px}
+#stGrid .ig{margin:0 auto}
+.ig[style*="--s:2"] .tile .tv,.ig[style*="--s:3"] .tile .tv{font-size:7.5px;right:1px;letter-spacing:-.02em}
+.ig[style*="--s:2"] .tile .tn,.ig[style*="--s:3"] .tile .tn{font-size:8.5px}
 </style>
 
 </head>
@@ -279,6 +343,8 @@ button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
       <div class="funds"><small>可用资金</small><b id="money">¥0</b></div>
     </div>
     <div class="stats" id="stats"></div>
+    <div class="slot"><h2>仓库</h2><div id="o-stash"></div></div>
+    <div class="slot"><h2>大红收藏室</h2><div id="o-coll"></div></div>
     <p class="rule" id="rule"></p>
     <div id="err" hidden></div>
     <div class="slot"><h2>模式</h2><div class="opts" id="o-mode"></div></div>
@@ -364,6 +430,24 @@ button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
     <div class="rgrid" id="rg"></div>
     <div class="plist rl" id="rl"></div>
     <button id="back">返回整备</button>
+  </div>
+</div>
+
+<div id="stash" hidden>
+  <div class="coll-w">
+    <div class="coll-top st-top"><div><div class="coll-k st-k">STASH</div><h2>仓库</h2></div><button id="stBack">返回整备</button></div>
+    <div class="coll-head st-head" id="stHead"></div>
+    <div class="st-tools" id="stTools"></div>
+    <div class="st-act" id="stAct"></div>
+    <div id="stGrid"></div>
+  </div>
+</div>
+
+<div id="coll" hidden>
+  <div class="coll-w">
+    <div class="coll-top"><div><div class="coll-k">RED COLLECTION</div><h2>大红收藏室</h2></div><button id="collBack">返回整备</button></div>
+    <div class="coll-head" id="collHead"></div>
+    <div id="collBody"></div>
   </div>
 </div>
 
@@ -460,11 +544,11 @@ const SAFES=[{n:'基础安全箱',cap:2,p:0},{n:'扩容安全箱',cap:4,p:60000}
 const BAND_P=500;
 const MODES=[
  {id:'raid',n:'搜打撤',tag:'经典',desc:'单人进图搜刮，从满足条件的撤离点带出物资。阵亡或超时损失背包和装备，只有安全箱能保住。',
-  rule:'带装备进图，搜刮容器，击倒敌人，在时限内从<b>满足条件的撤离点</b>离开。撤离成功：物资结算入账，装备带回仓库。阵亡或超时：<b>背包和装备全部损失，只有安全箱里的东西能保住</b>。五张地图难度依次升高，物资也越来越好。'},
+  rule:'带装备进图，搜刮容器，击倒敌人，在时限内从<b>满足条件的撤离点</b>离开。撤离成功：物资存入<b>仓库</b>（在整备界面出售换钱），装备带回。阵亡或超时：<b>背包和装备全部损失，只有安全箱里的东西能保住</b>。五张地图难度依次升高，物资也越来越好。'},
  {id:'squad',n:'3v3v3 淘汰赛',tag:'团队',desc:'你和 2 名队友对抗 2 支 AI 小队，没有撤离点。先赢 3 局的队伍获胜。阵亡本局不能复活；活到局末可选 2 件物品带进下一局，其余入库结算。',
-  rule:'每局开始只有手枪。容器里会搜出<b>武器和护甲</b>，拿到背包后点「装备」换上。其他两队全灭则本局获胜，<b>先赢 3 局</b>的队伍赢得比赛。阵亡后本局无法复活，只能观战，背包丢失、安全箱保留。活到局末：从武器、护甲、背包、安全箱里<b>选 2 件带进下一局</b>，其余全部入库结算成资金。约 75 秒后各队开始主动索敌，每局限时 4 分钟，超时按剩余血量判胜。'},
+  rule:'每局开始只有手枪。容器里会搜出<b>武器和护甲</b>，拿到背包后点「装备」换上。其他两队全灭则本局获胜，<b>先赢 3 局</b>的队伍赢得比赛。阵亡后本局无法复活，只能观战，背包丢失、安全箱保留。活到局末：从武器、护甲、背包、安全箱里<b>选 2 件带进下一局</b>，其余全部存入仓库。约 75 秒后各队开始主动索敌，每局限时 4 分钟，超时按剩余血量判胜。'},
  {id:'zombie',n:'丧尸围城',tag:'趣味',fun:true,desc:'一波比一波多的丧尸从四面八方涌来。自带步枪和二级甲，每清一波补给绷带和手雷。',
-  rule:'丧尸会一直追着你，贴身才攻击。每波清空后有 10 秒喘息，获得 1 个绷带和 1 颗破片手雷。阵亡后结算：<b>每撑过一波 ¥3,000</b>，每只 ¥150，身上物资照常结算。'},
+  rule:'丧尸会一直追着你，贴身才攻击。每波清空后有 10 秒喘息，获得 1 个绷带和 1 颗破片手雷。阵亡后结算：<b>每撑过一波 ¥3,000</b>，每只 ¥150，身上物资存入仓库。'},
  {id:'oneshot',n:'一击必杀',tag:'趣味',fun:true,desc:'8 人个人混战，所有人（包括你）一枪倒地，3 秒后复活。先拿到 12 杀获胜。',
   rule:'所有人一发子弹就倒，包括你。倒地 3 秒后在远离敌人的位置复活。<b>先到 12 杀</b>获胜，8 分钟到时按击杀数排名。奖励：每杀 ¥500，第一名额外 ¥20,000。'},
  {id:'nade',n:'手雷大战',tag:'趣味',fun:true,desc:'8 人混战，没有枪，只有无限破片手雷。AI 也会朝你扔。先到 10 杀获胜。',
@@ -480,7 +564,7 @@ const MODES=[
  {id:'bounty',n:'赏金猎人',tag:'趣味',fun:true,desc:'8 人个人混战。分数最高的人头顶挂着金色悬赏标记，击倒他得 3 分，其他人 1 分。先到 20 分获胜。',
   rule:'领先者头顶有<b>透墙可见的金色标记</b>，击倒他得 3 分，击倒普通对手得 1 分。你领先时也会被标记。先到 20 分获胜，倒地 3 秒后复活。'},
  {id:'br',n:'缩圈大逃杀',tag:'趣味',fun:true,desc:'12 人单排，只带手枪落地。搜装备，跟着安全区走，活到最后的人获胜。',
-  rule:'所有人只带手枪，<b>容器里能搜到武器和护甲</b>，点「装备」换上。安全区分 4 次缩小，圈外持续掉血且越来越疼。<b>不能复活</b>，按存活名次给奖励，吃鸡额外 ¥40,000，背包物资也一并结算。'},
+  rule:'所有人只带手枪，<b>容器里能搜到武器和护甲</b>，点「装备」换上。安全区分 4 次缩小，圈外持续掉血且越来越疼。<b>不能复活</b>，按存活名次给奖励，吃鸡额外 ¥40,000，背包物资存入仓库。'},
 ];
 const TEAMS={p:{n:'我方',c:'#63c57e'},o0:{n:'红队',c:'#d0483a'},o1:{n:'紫队',c:'#8a64d0'}};
 const FFA=[['猎鹰','#d0483a'],['蝮蛇','#8a64d0'],['山猫','#3f93b8'],['灰狼','#9a9a9a'],['夜枭','#c78a2a'],['野牛','#a0522d'],['孤狼','#2f8f6a']];
@@ -537,7 +621,7 @@ function rollSxd(redP){ const red=Math.random()<redP,L=red?SXD_RED:SXD_GOLD,it=L
 
 /* ================= 存档 ================= */
 const KEY='grayport_save_v1';
-function fresh(){return {money:30000,owned:{},band:2,raids:0,ext:0,earned:0,best:0,mapBest:{},lastMap:'gray',op:'hive',safe:0,nades:{frag:1,smoke:1},mode:'raid'}}
+function fresh(){return {money:30000,owned:{},band:2,raids:0,ext:0,earned:0,best:0,mapBest:{},lastMap:'gray',op:'hive',safe:0,nades:{frag:1,smoke:1},mode:'raid',coll:{},collBonus:{},stash:[],stashRows:12}}
 let save=(()=>{try{const s=JSON.parse(localStorage.getItem(KEY));if(s&&typeof s.money==='number'){const f=fresh(); for(const k in f) if(s[k]===undefined)s[k]=f[k]; if(!Object.keys(s.mapBest).length&&s.best)s.mapBest.gray=s.best; return s;}}catch(e){}return fresh()})();
 const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(save))}catch(e){}};
 const isUnlocked=()=>true;
@@ -561,6 +645,7 @@ function stepper(id,val,stock,label,sub){ return `<div class="band"><div class="
 function renderMenu(){
   $('#money').textContent='¥'+fmt(save.money);
   const rate=save.raids?Math.round(save.ext/save.raids*100)+'%':'—';
+  renderCollSlot(); renderStashSlot();
   $('#stats').innerHTML=`<div><small>行动次数</small><b>${save.raids}</b></div><div><small>撤离率</small><b>${rate}</b></div><div><small>累计带出</small><b>¥${fmt(save.earned)}</b></div><div><small>单局最高</small><b>¥${fmt(save.best)}</b></div>`;
   $('#o-map').innerHTML=MAPS.map((m,i)=>{
     const lock=!isUnlocked(m),best=save.mapBest[m.id]||0; let foot;
@@ -589,6 +674,8 @@ function renderMenu(){
   $('#go').disabled=c>save.money;
 }
 $('#menu').addEventListener('click',e=>{
+  if(e.target.closest('#openColl')){openColl();return}
+  if(e.target.closest('#openStash')){openStash();return}
   if(e.target.id==='upSafe'){ const nx=SAFES[save.safe+1]; if(nx&&save.money>=nx.p){save.money-=nx.p;save.safe++;persist();renderMenu();} return; }
   const st=e.target.closest('[data-st]'); if(st){ const id=st.dataset.st,d=+st.dataset.d; if(id==='band')sel.band=clamp(sel.band+d,0,6); else sel.nades[id]=clamp((sel.nades[id]||0)+d,0,3); renderMenu(); return; }
   const mp=e.target.closest('.map'); if(mp){ const m=MAPS.find(x=>x.id===mp.dataset.map); if(isUnlocked(m)){sel.map=m.id;save.lastMap=m.id;persist();renderMenu();} return; }
@@ -1379,9 +1466,9 @@ function showRound(){
   RSEL=new Set(); RLIST=G.p.dead?[]:carryList();
   const alive=!G.p.dead;
   let txt;
-  if(alive&&!done) txt='你活到了局末。选 <b>最多 2 件</b>带进下一局，没选的全部入库结算成资金。武器和护甲带过去会直接装备。';
-  else if(alive) txt='比赛结束，身上所有物品全部入库结算。';
-  else txt=`你在本局阵亡，背包已丢失。${G.p.safe.length?`安全箱里的 ${G.p.safe.length} 件物品（¥${fmt(safeVal())}）已入库。`:'安全箱是空的。'}`;
+  if(alive&&!done) txt='你活到了局末。选 <b>最多 2 件</b>带进下一局，没选的全部存入仓库。武器和护甲带过去会直接装备。';
+  else if(alive) txt='比赛结束，身上所有物品全部存入仓库。';
+  else txt=`你在本局阵亡，背包已丢失。${G.p.safe.length?`安全箱里的 ${G.p.safe.length} 件物品（¥${fmt(safeVal())}）已存入仓库。`:'安全箱是空的。'}`;
   $('#rdP').innerHTML=txt;
   renderPicks(!done&&alive);
   $('#rdGo').textContent=done?'查看比赛结算':'进入下一局';
@@ -1395,9 +1482,9 @@ function toastMenu(t){ const p=$('#rdP'); const o=p.innerHTML; p.innerHTML=`<b s
 $('#rdGo').onclick=()=>{
   const done=Math.max(MATCH.score.p,MATCH.score.o0,MATCH.score.o1)>=3;
   let cash=0;
-  if(G.p.dead) cash=safeVal();
-  else { RLIST.forEach((it,i)=>{ if(!done&&RSEL.has(i)){ const c={...it}; delete c.eqd; MATCH.carry.push(c); } else cash+=it.value; }); }
-  MATCH.earned+=cash; save.money+=cash; save.earned+=cash; persist();
+  if(G.p.dead){ cash=safeVal(); recordReds(G.p.safe); stashAdd(G.p.safe); }
+  else { const sold=[]; RLIST.forEach((it,i)=>{ if(!done&&RSEL.has(i)){ const c={...it}; delete c.eqd; MATCH.carry.push(c); } else { cash+=it.value; sold.push(it); } }); recordReds(sold); const r=stashAdd(sold); if(r.sold)MATCH.autoSold=(MATCH.autoSold||0)+r.soldV; }
+  MATCH.earned+=cash; save.earned+=cash; persist();
   MATCH.log.push(cash);
   if(done){ $('#round').hidden=true; matchEnd(); } else nextRound();
 };
@@ -1406,8 +1493,8 @@ function matchEnd(){
   const bonus=win?30000:rank===2?8000:3000;
   save.money+=bonus; save.earned+=bonus; persist();
   showResultCard({st:`3v3v3 淘汰赛 · ${MATCH.M.n}`,h:win?'赢得比赛':'比赛失败',ok:win,
-    p:`最终比分 我方 ${s.p} : 红队 ${s.o0} : 紫队 ${s.o1}。共 ${MATCH.round} 局，入库物资 ¥${fmt(MATCH.earned)}，名次奖励 ¥${fmt(bonus)}。`,
-    grid:[['总收入','¥'+fmt(MATCH.earned+bonus),true],['击倒',String(MATCH.kills)],['名次',`第 ${rank}`]],rows:[]});
+    p:`最终比分 我方 ${s.p} : 红队 ${s.o0} : 紫队 ${s.o1}。共 ${MATCH.round} 局，存入仓库的物资价值 ¥${fmt(MATCH.earned)}，名次奖励 ¥${fmt(bonus)} 已入账。${MATCH.autoSold?`仓库放不下的部分已自动出售 ¥${fmt(MATCH.autoSold)}。`:''}`,
+    grid:[['入库价值','¥'+fmt(MATCH.earned),true],['击倒',String(MATCH.kills)],['名次',`第 ${rank}`]],rows:[],ru:collBanner(MATCH)});
   MATCH=null;
 }
 
@@ -1630,10 +1717,99 @@ function brZoneB(u,dt){
 }
 function endBr(rank){
   if(G.over)return; G.over=true; G.result='br'; G.rank=rank; G.overT=rank===1?.8:1.6; closePanel(false); if(locked){try{document.exitPointerLock()}catch(e){}}
+  recordReds(rank===1?[...G.p.bag,...G.p.safe]:G.p.safe);
   const loot=rank===1?bagVal()+safeVal():safeVal();
-  G.reward=(rank===1?40000:Math.max(0,12-rank)*2000)+G.kills*500+loot; G.loot=loot; save.money+=G.reward; save.earned+=G.reward; persist();
+  G.stashRes=stashAdd(rank===1?[...G.p.bag,...G.p.safe]:G.p.safe); G.reward=(rank===1?40000:Math.max(0,12-rank)*2000)+G.kills*500; G.loot=loot; save.money+=G.reward; save.earned+=G.reward+loot; persist();
   sfxTone(rank===1?880:110,.6,.1,rank===1?'sine':'sawtooth');
 }
+
+
+
+/* ================= 仓库 ================= */
+const STASH_COLS=10,STASH_BASE=12,STASH_MAX=40;
+const stashDim=()=>[STASH_COLS,save.stashRows||STASH_BASE];
+const stashVal=()=>(save.stash||[]).reduce((a,i)=>a+i.value,0);
+const stashUsed=()=>(save.stash||[]).reduce((a,i)=>a+i.size,0);
+const expandCost=()=>300000*(((save.stashRows||STASH_BASE)-STASH_BASE)/4+1);
+function stashAdd(items){
+  if(!save.stash)save.stash=[];
+  const dim=stashDim(),res={stored:0,sold:0,soldV:0,val:0};
+  for(const it of items.slice().sort((a,b)=>b.value-a.value)){
+    if(!it||it.band)continue;
+    const c={name:it.name,value:it.value,size:it.size,r:it.r}; for(const k of ['from','gear','id','key'])if(it[k]!=null)c[k]=it[k];
+    if(fitInto(save.stash,dim,c)){res.stored++;res.val+=c.value} else {res.sold++;res.soldV+=c.value;save.money+=c.value}
+  }
+  return res;
+}
+function stashBanner(){ const r=G&&G.stashRes; if(!r||(!r.stored&&!r.sold))return '';
+  return `<div class="unl stash-ban"><b>${r.stored} 件物资已存入仓库</b>（价值 ¥${fmt(r.val)}），回到整备界面打开「仓库」出售。${r.sold?`<br>仓库已满，另有 ${r.sold} 件按原价自动出售，入账 ¥${fmt(r.soldV)}。`:''}</div>`; }
+let STSEL=-1,sellAllArm=false;
+function renderStashSlot(){ const n=(save.stash||[]).length,[c,r]=stashDim();
+  $('#o-stash').innerHTML=`<div class="stash-slot"><div class="cs-l"><b>${n} 件物资 · 价值 ¥${fmt(stashVal())}</b><span>搜回来的东西不会自动卖掉，都存在这里。需要资金时在仓库里出售。已用 ${stashUsed()}/${c*r} 格。</span><span class="pb"><i style="width:${Math.min(100,stashUsed()/(c*r)*100)}%"></i></span></div><button id="openStash">打开仓库</button></div>`; }
+function renderStash(){
+  const [C,R]=stashDim(),L=save.stash||[];
+  if(STSEL>=L.length)STSEL=-1;
+  $('#stHead').innerHTML=`<div><small>可用资金</small><b class="money">¥${fmt(save.money)}</b></div><div><small>物资 / 格子</small><b>${L.length} 件 · ${stashUsed()}/${C*R}</b></div><div><small>仓库总价值</small><b>¥${fmtS(stashVal())}</b></div>`;
+  const nx=save.stashRows||STASH_BASE, low=L.filter(i=>i.r<=3), lowV=low.reduce((a,i)=>a+i.value,0);
+  $('#stTools').innerHTML=`<button data-st="tidy">整理</button><button data-st="sellLow" ${low.length?'':'disabled'}>出售白绿蓝（${low.length} 件 · ¥${fmtS(lowV)}）</button><button data-st="sellAll" class="${sellAllArm?'warn':''}" ${L.length?'':'disabled'}>${sellAllArm?'再点一次确认全部出售':'全部出售'}</button>${nx<STASH_MAX?`<button data-st="expand" ${save.money<expandCost()?'disabled':''}>扩容 +4 行 · ¥${fmtS(expandCost())}</button>`:''}`;
+  const it=STSEL>=0?L[STSEL]:null,A=$('#stAct');
+  if(it){ A.innerHTML=`<div class="pa-info"><span class="pa-ico" style="--rc:${RAR[it.r].c}">${iconSVG(it)}</span><span class="pa-t"><b>${it.name}</b><small>${RN[it.r]}色品质${it.from?' · '+it.from:''} · ${it.gw}×${it.gh}${it.r===6&&save.coll&&save.coll[it.name]?' · 已在收藏室陈列':''}</small></span><b class="pa-v">¥${fmt(it.value)}</b></div><div class="pa-btns"><button data-st="sell" class="pri">出售 ¥${fmtS(it.value)}</button>${it.gear?`<button data-st="armory">收入装备库（下局免费用）</button>`:''}<button data-st="unsel">取消</button></div>`; }
+  else A.innerHTML=`<div class="pa-hint">点一下格子里的物品查看详情和出售。红色物品卖掉后，收藏室里的陈列仍然保留。</div>`;
+  const wrap=$('#stGrid'),w=Math.max(260,wrap.clientWidth||360);
+  const cell=clamp(Math.floor((w-8-(C-1)*2)/C),28,54);
+  const tiles=L.map((t,i)=>`<button class="tile ${i===STSEL?'sel':''}" data-si="${i}" style="grid-column:${t.gx+1}/span ${t.gw};grid-row:${t.gy+1}/span ${t.gh};--rc:${RAR[t.r].c}">${iconSVG(t)}<span class="tn">${t.name}</span><span class="tv">¥${fmtS(t.value)}</span></button>`).join('');
+  let cells=''; for(let y=0;y<R;y++)for(let x=0;x<C;x++)cells+=`<i class="cell" style="grid-column:${x+1};grid-row:${y+1}"></i>`;
+  wrap.innerHTML=`<div class="ig" style="--c:${C};--s:${cell}px">${cells}${tiles}</div>`;
+}
+function openStash(){ STSEL=-1; sellAllArm=false; $('#stash').hidden=false; $('#stash').scrollTop=0; renderStash(); }
+function tidyStash(){ const items=(save.stash||[]).slice().sort((a,b)=>b.r-a.r||b.size-a.size||b.value-a.value); save.stash=[]; const dim=stashDim(); const left=[]; for(const it of items){ delete it.gx; if(!fitInto(save.stash,dim,it))left.push(it); } for(const it of left){ save.money+=it.value; } }
+$('#stash').addEventListener('click',e=>{
+  if(e.target.closest('#stBack')){ $('#stash').hidden=true; renderMenu(); return; }
+  const t=e.target.closest('[data-si]'); if(t){ const i=+t.dataset.si; STSEL=STSEL===i?-1:i; sellAllArm=false; renderStash(); return; }
+  const b=e.target.closest('[data-st]'); if(!b||b.disabled)return; const a=b.dataset.st,L=save.stash||[];
+  if(a!=='sellAll')sellAllArm=false;
+  if(a==='sell'&&L[STSEL]){ const it=L.splice(STSEL,1)[0]; save.money+=it.value; STSEL=-1; sfxTone(880,.08,.05); }
+  else if(a==='armory'&&L[STSEL]&&L[STSEL].gear){ const it=L.splice(STSEL,1)[0]; save.owned[it.id]=own(it.id)+1; STSEL=-1; }
+  else if(a==='unsel') STSEL=-1;
+  else if(a==='tidy'){ tidyStash(); STSEL=-1; }
+  else if(a==='sellLow'){ let v=0; save.stash=L.filter(i=>{ if(i.r<=3){v+=i.value;return false} return true; }); save.money+=v; STSEL=-1; }
+  else if(a==='sellAll'){ if(!sellAllArm){ sellAllArm=true; renderStash(); setTimeout(()=>{ if(sellAllArm){sellAllArm=false; if(!$('#stash').hidden)renderStash();} },3000); return; } save.money+=stashVal(); save.stash=[]; sellAllArm=false; STSEL=-1; }
+  else if(a==='expand'){ const c=expandCost(); if(save.money>=c&&(save.stashRows||STASH_BASE)<STASH_MAX){ save.money-=c; save.stashRows=(save.stashRows||STASH_BASE)+4; } }
+  persist(); renderStash();
+});
+
+/* ================= 大红收藏室 ================= */
+const COLL_BONUS=10000000;
+function collGroups(){
+  return [
+    {id:'std',n:'常规大红',src:'各地图保险柜 · 机密保险柜 · 首领与精英',items:ITEMS.filter(i=>i[3]===6).map(i=>({name:i[0],value:i[1],size:i[2],r:6}))},
+    {id:'sxd',n:'三星堆特辑',src:'三星堆保险箱 · 三星堆珍宝柜',items:SXD_RED.map(i=>({name:i[0],value:i[1],size:i[2],r:6}))},
+    {id:'mus',n:'吕豆博物馆',src:'吕豆保险箱 · 吕豆珍宝柜',items:MUSEUM.filter(m=>m[4]===6).map(m=>({name:m[0],from:m[1],value:m[2],size:m[3],r:6}))},
+  ];
+}
+function recordReds(items){
+  if(!save.coll)save.coll={}; if(!save.collBonus)save.collBonus={};
+  const d=new Date(),nw=[],bonus=[];
+  for(const it of items){ if(!it||it.r!==6)continue; let c=save.coll[it.name]; if(!c){ c=save.coll[it.name]={n:0,first:{map:G?G.map.n:'',t:`${d.getMonth()+1}月${d.getDate()}日`}}; nw.push(it.name); } c.n++; }
+  for(const g of collGroups()){ if(save.collBonus[g.id])continue; if(g.items.every(i=>save.coll[i.name])){ save.collBonus[g.id]=1; save.money+=COLL_BONUS; save.earned+=COLL_BONUS; bonus.push(g.n); } }
+  if(G){ G.newReds=(G.newReds||[]).concat(nw); G.collBonus=(G.collBonus||[]).concat(bonus); }
+  if(MATCH){ MATCH.newReds=(MATCH.newReds||[]).concat(nw); MATCH.collBonus=(MATCH.collBonus||[]).concat(bonus); }
+  return nw;
+}
+function collBanner(src){ src=src||G||{}; const nw=src.newReds||[],bo=src.collBonus||[]; if(!nw.length&&!bo.length)return '';
+  return `<div class="unl coll-ban"><b>大红收藏室新增 ${nw.length} 件</b>${nw.length?'<br>'+nw.join('、'):''}${bo.map(g=>`<br>集齐「${g}」全套，奖励 ¥${fmt(COLL_BONUS)}`).join('')}</div>`; }
+function collStats(){ const gs=collGroups(); let tot=0,got=0,val=0,pcs=0; for(const g of gs)for(const i of g.items){ tot++; const c=save.coll&&save.coll[i.name]; if(c){got++;val+=i.value*c.n;pcs+=c.n} } return {tot,got,val,pcs}; }
+function renderCollSlot(){ const s=collStats(); $('#o-coll').innerHTML=`<div class="coll-slot"><div class="cs-l"><b>已收藏 ${s.got} / ${s.tot} 件</b><span>成功带出的红色物品会自动陈列在这里，出售所得照常入账。集齐一整套额外奖励 ¥${fmt(COLL_BONUS)}。</span><span class="pb"><i style="width:${s.got/s.tot*100}%"></i></span></div><button id="openColl">进入收藏室</button></div>`; }
+function renderColl(){
+  const s=collStats();
+  $('#collHead').innerHTML=`<div><small>收藏进度</small><b>${s.got}/${s.tot}</b></div><div><small>累计带出件数</small><b>${s.pcs}</b></div><div><small>累计藏品价值</small><b>¥${fmtS(s.val)}</b></div>`;
+  $('#collBody').innerHTML=collGroups().map(g=>{ const got=g.items.filter(i=>save.coll&&save.coll[i.name]).length,done=got===g.items.length;
+    return `<section class="shelf"><div class="shelf-h"><h3>${g.n}</h3><span>${got}/${g.items.length}${done?' · 已集齐':''}</span></div><div class="shelf-src">掉落来源：${g.src}${save.collBonus&&save.collBonus[g.id]?' · 集齐奖励已领取':` · 集齐奖励 ¥${fmtS(COLL_BONUS)}`}</div><div class="shelf-bar"><i style="width:${got/g.items.length*100}%"></i></div>
+      <div class="cases">${g.items.map(i=>{ const c=save.coll&&save.coll[i.name];
+        return `<div class="case ${c?'got':'lock'}"><div class="case-glass">${iconSVG(i)}${c?`<span class="case-n">×${c.n}</span>`:''}</div><div class="case-plate"><b>${c?i.name:'？？？'}</b><small>${c?`${i.from?i.from+' · ':''}¥${fmtS(i.value)}`:`${i.from?i.from+' · ':''}¥${fmtS(i.value)}`}</small>${c?`<small class="case-f">首次：${c.first.map} · ${c.first.t}</small>`:'<small class="case-f">未收藏</small>'}</div></div>`; }).join('')}</div></section>`; }).join('');
+}
+function openColl(){ renderColl(); $('#coll').hidden=false; $('#coll').scrollTop=0; }
+$('#collBack').onclick=()=>{ $('#coll').hidden=true; renderMenu(); };
 
 /* ================= 输入 ================= */
 const keys={}; const mouse={down:false,clicked:false,rdown:false}; let touchMode=matchMedia('(pointer:coarse)').matches||('ontouchstart' in window&&!matchMedia('(pointer:fine)').matches);
@@ -2065,7 +2241,8 @@ function endZombie(){
   if(G.over)return; G.over=true; G.result='zombie'; G.overT=1.6; closePanel(false); G.p.dead=true;
   if(locked){try{document.exitPointerLock()}catch(e){}}
   const waves=Math.max(0,G.wave-1+(G.units.length===0&&G.wave>0?1:0)); G.waves=waves;
-  const loot=bagVal()+safeVal(); G.reward=waves*3000+G.kills*150+loot; save.money+=G.reward; save.earned+=G.reward; persist();
+  recordReds([...G.p.bag,...G.p.safe]);
+  const loot=bagVal()+safeVal(); G.loot=loot; G.stashRes=stashAdd([...G.p.bag,...G.p.safe]); G.reward=waves*3000+G.kills*150; save.money+=G.reward; save.earned+=G.reward+loot; persist();
   sfxTone(110,.6,.1,'sawtooth');
 }
 
@@ -2258,23 +2435,24 @@ function endRaid(kind){
   if(kind==='ext'){
     for(const o of [G.eq.w,G.eq.a,G.eq.b]) if(o.p) save.owned[o.id]=own(o.id)+1;
     save.band+=G.p.band; for(const n of NADES)save.nades[n.id]=(save.nades[n.id]||0)+(G.nd[n.id]||0);
-    const val=bv+sv; save.money+=val; save.ext++; save.earned+=val; save.best=Math.max(save.best,val);
+    recordReds([...G.p.bag,...G.p.safe]);
+    const val=bv+sv; G.stashRes=stashAdd([...G.p.bag,...G.p.safe]); save.ext++; save.earned+=val; save.best=Math.max(save.best,val);
     save.mapBest[G.map.id]=Math.max(save.mapBest[G.map.id]||0,val);
     sfxTone(660,.2,.08); setTimeout(()=>sfxTone(990,.3,.08),150);
-  } else { save.money+=sv; save.earned+=sv; sfxTone(110,.6,.1,'sawtooth'); }
+  } else { recordReds(G.p.safe); G.stashRes=stashAdd(G.p.safe); save.earned+=sv; sfxTone(110,.6,.1,'sawtooth'); }
   persist();
 }
 function showResultCard(o){
   $('#game').hidden=true; $('#round').hidden=true; $('#result').hidden=false; document.body.classList.remove('looting');
   $('#rst').textContent=o.st; const h=$('#rh'); h.textContent=o.h; h.className=o.ok?'ok':'bad';
-  $('#rp').textContent=o.p; $('#ru').innerHTML=o.ru||'';
+  $('#rp').textContent=o.p; $('#ru').innerHTML=(o.ru||'')+stashBanner()+(o.ru&&o.ru.includes('coll-ban')?'':collBanner());
   $('#rg').innerHTML=o.grid.map(([l,v,g])=>`<div><small>${l}</small><b ${g?'style="color:var(--grn)"':''}>${v}</b></div>`).join('');
   $('#rl').innerHTML=(o.rows||[]).map(it=>`<div class="it" style="--rc:${RAR[it.r].c}">${icoRow(it)}<span>${it.name}</span><span class="sz">${it.tag||''}</span><span class="vl">¥${fmt(it.value)}</span></div>`).join('');
 }
 function showResult(){
   if(G.result==='zombie'){ return showResultCard({st:`丧尸围城 · ${G.map.n}`,h:`撑过 ${G.waves} 波`,ok:G.waves>=3,
-    p:`到达第 ${G.wave} 波。波次奖励 ¥${fmt(G.waves*3000)}，击杀奖励 ¥${fmt(G.kills*150)}，身上物资 ¥${fmt(bagVal()+safeVal())} 一并结算。`,
-    grid:[['总收入','¥'+fmt(G.reward),true],['击杀',String(G.kills)],['存活',mmss(G.t)]],rows:[...G.p.bag,...G.p.safe].map(i=>({...i,tag:'结算'}))}); }
+    p:`到达第 ${G.wave} 波。波次奖励 ¥${fmt(G.waves*3000)}，击杀奖励 ¥${fmt(G.kills*150)}，身上物资 ¥${fmt(G.loot)} 已存入仓库。`,
+    grid:[['现金奖励','¥'+fmt(G.reward),true],['击杀',String(G.kills)],['存活',mmss(G.t)]],rows:[...G.p.bag,...G.p.safe].map(i=>({...i,tag:'结算'}))}); }
   if(G.result==='ffa'){ const arr=Object.entries(G.score).sort((a,b)=>b[1]-a[1]);
     return showResultCard({st:`${FFA_CFG[G.ffa].n} · ${G.map.n}`,h:G.rank===1?'第一名':`第 ${G.rank} 名`,ok:G.rank===1,
       p:'最终击杀榜：'+arr.map(([t,s])=>`${t==='p'?'你':FFA[+t.slice(1)][0]} ${s}`).join('　'),
@@ -2283,7 +2461,7 @@ function showResult(){
       p:`最终比分 我方 ${G.caps.p} : 红队 ${G.caps.o0}。你亲手夺旗 ${G.p.caps||0} 次，击倒 ${G.kills} 人。`,
       grid:[['奖励','¥'+fmt(G.reward),true],['夺旗',String(G.p.caps||0)],['击倒',String(G.kills)]],rows:[]});
   if(G.result==='br') return showResultCard({st:`缩圈大逃杀 · ${G.map.n}`,h:G.rank===1?'大吉大利 · 第一名':`第 ${G.rank} 名`,ok:G.rank===1,
-      p:G.rank===1?`击败全部 11 名对手，背包物资 ¥${fmt(G.loot)} 一并结算。`:`在 ${G.startN} 人中排第 ${G.rank}。背包丢失${G.loot?`，安全箱保住 ¥${fmt(G.loot)}`:''}。`,
+      p:G.rank===1?`击败全部 11 名对手，背包物资 ¥${fmt(G.loot)} 已存入仓库。`:`在 ${G.startN} 人中排第 ${G.rank}。背包丢失${G.loot?`，安全箱里的 ¥${fmt(G.loot)} 已存入仓库`:''}。`,
       grid:[['奖励','¥'+fmt(G.reward),true],['名次',`${G.rank}/${G.startN}`],['击倒',String(G.kills)]],rows:[]});
   if(G.result==='props') return showResultCard({st:`躲猫猫 · ${G.map.n}`,h:G.allFound?'全部找到':`找到 ${G.found}/${G.total}`,ok:G.allFound,
       p:G.allFound?`用时 ${mmss(180-G.time)}，剩余 ${Math.ceil(G.time)} 秒计入奖励。打错箱子 ${G.wrong} 次。`:`时间到，还有 ${G.total-G.found} 个伪装者没找到。打错箱子 ${G.wrong} 次。`,
@@ -2299,15 +2477,15 @@ function showRaidResult(){
   $('#rst').textContent=`${G.map.n} · `+(k==='ext'?`撤离点 ${G.extZone?G.extZone.name:''}`:'行动失败');
   const h=$('#rh'); h.textContent=k==='ext'?'撤离成功':k==='dead'?'已阵亡':'失踪（超时）'; h.className=k==='ext'?'ok':'bad';
   const lost=[G.eq.w,G.eq.a,G.eq.b].filter(o=>o.p).reduce((a,o)=>a+o.p,0);
-  $('#rp').textContent=k==='ext'?'物资已结算入账，装备、绷带和剩余投掷物已回到仓库。':`背包内 ${G.p.bag.length} 件物资丢失${lost?`，损失装备价值 ¥${fmt(lost)}`:''}。${sv?`安全箱保住了 ¥${fmt(sv)}。`:'安全箱是空的。'}`;
+  $('#rp').textContent=k==='ext'?'带出的物资已存入仓库，装备、绷带和剩余投掷物也已收回。':`背包内 ${G.p.bag.length} 件物资丢失${lost?`，损失装备价值 ¥${fmt(lost)}`:''}。${sv?`安全箱里的 ¥${fmt(sv)} 已存入仓库。`:'安全箱是空的。'}`;
   const newly=MAPS.filter(m=>isUnlocked(m)&&!G.unlockedBefore.includes(m.id)),next=MAPS.find(m=>m.req&&m.req.map===G.map.id);
   let ru='';
   if(newly.length) ru=`<div class="unl">新地图解锁：<b>${newly.map(m=>m.n).join('、')}</b><br>新机制：${newly.flatMap(m=>m.newF).join('、')}</div>`;
   else if(next&&!isUnlocked(next)) ru=`<p>解锁「${next.n}」需要在本图单局带出 ¥${fmt(next.req.val)}（背包 + 安全箱），当前最佳 ¥${fmt(save.mapBest[G.map.id]||0)}。</p>`;
-  $('#ru').innerHTML=ru;
+  $('#ru').innerHTML=ru+stashBanner()+collBanner();
   const inc=k==='ext'?bv+sv:sv;
-  $('#rg').innerHTML=`<div><small>结算收入</small><b style="color:${inc?'var(--grn)':'var(--dim)'}">¥${fmt(inc)}</b></div><div><small>击倒 / 干员</small><b>${G.kills} / ${G.opKills}</b></div><div><small>用时</small><b>${mmss(used)}</b></div>`;
-  const rows=[...G.p.safe.map(i=>({...i,tag:'安全箱'})),...G.p.bag.map(i=>({...i,tag:k==='ext'?'背包':'已丢失'}))].sort((a,b)=>b.value-a.value);
+  $('#rg').innerHTML=`<div><small>带出价值</small><b style="color:${inc?'var(--grn)':'var(--dim)'}">¥${fmt(inc)}</b></div><div><small>击倒 / 干员</small><b>${G.kills} / ${G.opKills}</b></div><div><small>用时</small><b>${mmss(used)}</b></div>`;
+  const rows=[...G.p.safe.map(i=>({...i,tag:'安全箱·入库'})),...G.p.bag.map(i=>({...i,tag:k==='ext'?'入库':'已丢失'}))].sort((a,b)=>b.value-a.value);
   $('#rl').innerHTML=rows.map(it=>`<div class="it" style="--rc:${RAR[it.r].c};${it.tag==='已丢失'?'opacity:.45':''}">${icoRow(it)}<span>${it.name}</span><span class="sz">${it.tag}</span><span class="vl">¥${fmt(it.value)}</span></div>`).join('')||'<div class="empty">没有带出任何物资</div>';
 }
 $('#back').onclick=()=>{ $('#result').hidden=true; $('#menu').hidden=false; disposeScene(); G=null; NAV=null; renderMenu(); };
