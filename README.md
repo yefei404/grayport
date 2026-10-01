@@ -11,6 +11,7 @@ GitHub Pages: `https://yefei404.github.io/grayport/`
 - **整备**：选择地图、干员、主武器、护甲、背包和战术装备后部署
 - **战术道具**：干员带有多件可切换的战术技能，各有独立冷却
 - **战斗**：搜索容器、交火、治疗、投掷，成功撤离才能把物资带回去
+- **角色模型**：干员和敌人使用带骨骼动画的三维士兵模型
 - **仓库**：带出的物资先入库，需要资金时再出售；仓库可扩容
 - **大红收藏室**：成功带出的红色物品自动陈列，集齐一套有额外奖励
 - **安全箱**：箱内物品阵亡也保留
@@ -22,9 +23,12 @@ GitHub Pages: `https://yefei404.github.io/grayport/`
 
 ```
 grayport/
-├── index.html      # 单文件应用（HTML + CSS + JS）
-├── three.min.js    # Three.js（本地，避免依赖外网 CDN）
-├── icon.png        # iPad 主屏幕图标
+├── index.html        # 页面（HTML + CSS + JS）
+├── three.min.js      # Three.js（本地）
+├── GLTFLoader.js     # 模型加载
+├── SkeletonUtils.js  # 骨骼动画
+├── soldier.json      # 士兵模型
+├── icon.png          # iPad 主屏幕图标
 └── README.md
 ```
 
